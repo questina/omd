@@ -101,17 +101,6 @@ def make_str_for_department_review(department_info: Dict[str, DepartmentInfo], d
     return whole_review_str
 
 
-def write_department_review_file(csv_file_path: str, departments_data: Dict[str, DepartmentInfo]) -> None:
-    """
-    Функция записывает в csv файл собранную информацию по департаментам.
-    :param csv_file_path: путь до csv файла.
-    :param departments_data: информация по департаментам.
-    """
-
-    with open(csv_file_path, 'w') as csv_file:
-        csv_file.write(make_str_for_department_review(departments_data))
-
-
 def print_department_hierarchy(department_info: Dict[str, DepartmentInfo]) -> None:
     """
     Функция выводит в стандартный вывод иерархию компании в виде названия департамента
@@ -133,17 +122,26 @@ def print_department_review(department_info: Dict[str, DepartmentInfo]) -> None:
     print(make_str_for_department_review(department_info, delimiter=', '), end='')
 
 
-def process_input(user_input: str) -> Optional[int]:
+def write_department_review_file(csv_file_path: str, departments_data: Dict[str, DepartmentInfo]) -> None:
+    """
+    Функция записывает в csv файл собранную информацию по департаментам.
+    :param csv_file_path: путь до csv файла.
+    :param departments_data: информация по департаментам.
+    """
+    with open(csv_file_path, 'w') as csv_file:
+        csv_file.write(make_str_for_department_review(departments_data))
+
+
+def process_input() -> Optional[int]:
     """
     Функция валидирует ввод пользователя и приводит его к int, если ввод корректен.
-    :param user_input: ввод пользователя.
-    :return: ввод пользователя в формате целого числа или None, если ввод некорректен.
+    :return: ввод пользователя в формате целого числа от 1 до 3 или None, если ввод некорректен.
     """
+    user_input = input()
     if user_input.isdigit():
         user_input = int(user_input)
         if 1 <= user_input <= 3:
             return user_input
-    print('Пожалуйста введите цифру от 1 до 3!')
     return None
 
 
@@ -155,7 +153,7 @@ def main():
               '2. Вывести сводный отчёт по департаментам: название, численность, '
               '"вилка" зарплат в виде мин – макс, среднюю зарплату.\n'
               '3. Сохранить сводный отчёт из предыдущего пункта в виде csv-файла.')
-        user_choice = process_input(input())
+        user_choice = process_input()
         if user_choice is not None:
             if user_choice == 1:
                 print_department_hierarchy(departments)
@@ -164,7 +162,8 @@ def main():
             else:
                 write_department_review_file(REVIEW_CSV_PATH, departments)
                 print(f'Сохранил файл по пути {REVIEW_CSV_PATH}')
-        print()
+        else:
+            print('Пожалуйста введите цифру от 1 до 3!')
 
 
 if __name__ == '__main__':
