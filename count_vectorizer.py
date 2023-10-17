@@ -3,7 +3,7 @@ from typing import Iterable, List
 
 class CountVectorizer:
     """
-    Convert a collection of text documents to a matrix of token counts.
+    Convert a collection of text documents to a document-term matrix.
 
     Parameters
     ------------
@@ -49,10 +49,10 @@ class CountVectorizer:
 
     def fit_transform(self, corpus: Iterable[str]) -> List[int]:
         """
-        Learn vocabulary of words and convert corpus to term-count vectors.
+        Learn vocabulary of words and convert corpus to document-term matrix.
 
         :param corpus: collection of texts to tokenization.
-        :return: processed texts in a form of term-count vectors.
+        :return: processed texts in a form of document-term matrix.
         """
         self._word_to_idx = {}
         corpus_word_freq = []
@@ -88,7 +88,10 @@ class CountVectorizer:
         if self._word_to_idx is None:
             raise Exception('Vocabulary not fitted yet')
         return [
-            t for t, i in sorted(self._word_to_idx.items(), key=lambda k, v: v)
+            t for t, i in sorted(
+                self._word_to_idx.items(),
+                key=lambda dict_item: dict_item[1]
+            )
         ]
 
 
