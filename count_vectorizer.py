@@ -69,7 +69,10 @@ class CountVectorizer:
             for _ in range(len(corpus))
         ]
 
-        for count_vector, text_word_freq in zip(count_matrix, corpus_word_freq):
+        for count_vector, text_word_freq in zip(
+                count_matrix,
+                corpus_word_freq
+        ):
             for word_idx, word_freq in text_word_freq.items():
                 count_vector[word_idx] = word_freq
 
