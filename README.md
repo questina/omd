@@ -1,2 +1,13 @@
 # omd
-This repository contains home tasks for avito python course
+
+This repository contains different testing techniques.
+
+#### doctest
+
+Here doctest is used for _encode_ function in morse module.
+
+To run tests you should write in your command line:
+```commandline
+python3 -m doctest -o IGNORE_EXCEPTION_DETAIL -v morse.py
+```
+You should get the same output as in _results.txt_ file. 
