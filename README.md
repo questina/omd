@@ -1,8 +1,6 @@
-# omd
-
 This repository contains different testing techniques.
 
-#### doctest
+#### [doctest](https://docs.python.org/3/library/doctest.html)
 
 Here doctest is used for _encode_ function in morse module.
 
