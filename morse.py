@@ -31,9 +31,12 @@ def encode(message: str) -> str:
     >>> encode('SOS')
     '... --- ...'
 
-    >>> encode('AVITO')  # doctest: +NORMALIZE_WHITESPACE
+    >>> encode('AV ITO')  # doctest: +NORMALIZE_WHITESPACE
     '.- ...-
     .. - ---'
+
+    >>> encode('')
+    ''
 
     >>> encode(100)
     Traceback (most recent call last):
@@ -61,11 +64,3 @@ def decode(morse_message: str) -> str:
     ]
 
     return ''.join(decoded_letters)
-
-
-if __name__ == '__main__':
-    morse_msg = ('-- .- .. -....- .--. -.-- - .... '
-                 '--- -. -....- ..--- ----- .---- ----.')
-    decoded_msg = decode(morse_msg)
-    print(decoded_msg)
-    assert morse_msg == encode(decoded_msg)

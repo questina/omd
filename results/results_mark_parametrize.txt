@@ -1,0 +1,26 @@
+$ python3 -m pytest -v tests/test_decode.py
+========================================================================= test session starts =========================================================================
+platform darwin -- Python 3.9.13, pytest-7.1.2, pluggy-1.0.0 -- /Users/questina/opt/anaconda3/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/questina/Desktop/omd
+plugins: anyio-3.5.0
+collected 5 items
+
+tests.py::test_decode[... --- ...-SOS] PASSED                                                                                                                   [ 20%]
+tests.py::test_decode[.- ...- .. - ----AVITO] PASSED                                                                                                            [ 40%]
+tests.py::test_decode[-.. --- ..- .... ---.. -- . ..--.. -.--.- -.--.--DOUH8ME?))] PASSED                                                                       [ 60%]
+tests.py::test_decode[-] PASSED                                                                                                                                 [ 80%]
+tests.py::test_decode[ -] PASSED                                                                                                                                [100%]
+
+========================================================================== 5 passed in 0.03s ===========================================================================
+
+$ python3 -m pytest tests/test_decode.py
+========================================================================= test session starts =========================================================================
+platform darwin -- Python 3.9.13, pytest-7.1.2, pluggy-1.0.0
+rootdir: /Users/questina/Desktop/omd
+plugins: anyio-3.5.0
+collected 5 items
+
+tests/test_decode.py .....                                                                                                                                      [100%]
+
+========================================================================== 5 passed in 0.01s ==========================================================================
