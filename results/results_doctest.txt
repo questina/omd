@@ -1,0 +1,39 @@
+$ python3 -m doctest -o IGNORE_EXCEPTION_DETAIL -v morse.py
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('AV ITO')  # doctest: +NORMALIZE_WHITESPACE
+Expecting:
+    '.- ...-
+    .. - ---'
+ok
+Trying:
+    encode('')
+Expecting:
+    ''
+ok
+Trying:
+    encode(100)
+Expecting:
+    Traceback (most recent call last):
+        ...
+    TypeError
+ok
+Trying:
+    encode('avito')
+Expecting:
+    Traceback (most recent call last):
+        ...
+    KeyError
+ok
+2 items had no tests:
+    morse
+    morse.decode
+1 items passed all tests:
+   5 tests in morse.encode
+5 tests in 3 items.
+5 passed and 0 failed.
+Test passed.

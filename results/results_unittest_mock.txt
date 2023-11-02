@@ -1,0 +1,33 @@
+$ python3 -m unittest -v tests/test_what_is_year_now.py
+test_dmy_format (tests.test_what_is_year_now.TestYearGetter) ... ok
+test_incorrect_format (tests.test_what_is_year_now.TestYearGetter) ... ok
+test_ymd_format (tests.test_what_is_year_now.TestYearGetter) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+OK
+
+$ python3 -m unittest tests/test_what_is_year_now.py
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK
+
+$ python3 -m coverage run -m unittest tests/test_what_is_year_now.py
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+OK
+
+$ coverage report -m what_is_year_now.py
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+what_is_year_now.py      19      0   100%
+---------------------------------------------------
+TOTAL                    19      0   100%
+
+$ coverage html what_is_year_now.py
+Wrote HTML report to htmlcov/index.html

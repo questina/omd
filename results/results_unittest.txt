@@ -1,0 +1,18 @@
+$ python3 -m unittest -v tests/test_one_hot_encoder_ut.py
+test_empty_input (tests.test_one_hot_encoder.TestOneHotEncoder) ... ok
+test_incorrect_input (tests.test_one_hot_encoder.TestOneHotEncoder) ... ok
+test_multiple_words_as_args (tests.test_one_hot_encoder.TestOneHotEncoder) ... ok
+test_multiple_words_as_list (tests.test_one_hot_encoder.TestOneHotEncoder) ... ok
+test_one_word (tests.test_one_hot_encoder.TestOneHotEncoder) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+
+$ python3 -m unittest tests/test_one_hot_encoder_ut.py
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK

@@ -1,0 +1,26 @@
+$ python3 -m pytest tests/test_one_hot_encoder_pt.py
+========================================================================= test session starts =========================================================================
+platform darwin -- Python 3.9.13, pytest-7.1.2, pluggy-1.0.0
+rootdir: /Users/questina/Desktop/omd
+plugins: anyio-3.5.0
+collected 5 items
+
+tests/test_one_hot_encoder_pt.py .....                                                                                                                          [100%]
+
+========================================================================== 5 passed in 0.02s ==========================================================================
+
+$ python3 -m pytest -v tests/test_one_hot_encoder_pt.py
+========================================================================= test session starts =========================================================================
+platform darwin -- Python 3.9.13, pytest-7.1.2, pluggy-1.0.0 -- /Users/questina/opt/anaconda3/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/questina/Desktop/omd
+plugins: anyio-3.5.0
+collected 5 items
+
+tests/test_one_hot_encoder_pt.py::test_empty_input PASSED                                                                                                       [ 20%]
+tests/test_one_hot_encoder_pt.py::test_one_word PASSED                                                                                                          [ 40%]
+tests/test_one_hot_encoder_pt.py::test_multiple_words_as_list PASSED                                                                                            [ 60%]
+tests/test_one_hot_encoder_pt.py::test_multiple_words_as_args PASSED                                                                                            [ 80%]
+tests/test_one_hot_encoder_pt.py::test_incorrect_input PASSED                                                                                                   [100%]
+
+========================================================================== 5 passed in 0.01s ==========================================================================

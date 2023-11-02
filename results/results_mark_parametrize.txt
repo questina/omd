@@ -1,0 +1,27 @@
+$ python3 -m pytest tests/test_decode.py
+========================================================================= test session starts =========================================================================
+platform darwin -- Python 3.9.13, pytest-7.1.2, pluggy-1.0.0
+rootdir: /Users/questina/Desktop/omd
+plugins: anyio-3.5.0
+collected 6 items
+
+tests/test_decode.py ......                                                                                                                                     [100%]
+
+========================================================================== 6 passed in 0.02s ==========================================================================
+
+$ python3 -m pytest -v tests/test_decode.py
+========================================================================= test session starts =========================================================================
+platform darwin -- Python 3.9.13, pytest-7.1.2, pluggy-1.0.0 -- /Users/questina/opt/anaconda3/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/questina/Desktop/omd
+plugins: anyio-3.5.0
+collected 6 items
+
+tests/test_decode.py::test_decode[... --- ...-SOS] PASSED                                                                                                       [ 16%]
+tests/test_decode.py::test_decode[.- ...- .. - ----AVITO] PASSED                                                                                                [ 33%]
+tests/test_decode.py::test_decode[-.. --- ..- .... ---.. -- . ..--.. -.--.- -.--.--DOUH8ME?))] PASSED                                                           [ 50%]
+tests/test_decode.py::test_decode[-] PASSED                                                                                                                     [ 66%]
+tests/test_decode.py::test_decode[ -] PASSED                                                                                                                    [ 83%]
+tests/test_decode.py::test_decode[.- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.. .---- ..--- ...-- ....- ..... -.... --... ---.. ----. ----- --..-- .-.-.- ..--.. -..-. -....- -.--. -.--.--ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890, .?/-()] PASSED [100%]
+
+========================================================================== 6 passed in 0.01s ==========================================================================
