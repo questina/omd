@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 
-from what_is_year_now import what_is_year_now
+from what_is_year_now import what_is_year_now, API_URL
 
 
 def make_cm_for_urlopen(return_val, http_code=200):
@@ -20,6 +20,7 @@ class TestYearGetter(unittest.TestCase):
                 '{"currentDateTime": "2026-05-07"}'
             )
             self.assertEqual(what_is_year_now(), 2026)
+            self.assertEqual(mock_urlopen.call_args.args[0], API_URL)
 
     def test_dmy_format(self):
         with patch("urllib.request.urlopen") as mock_urlopen:
@@ -33,4 +34,5 @@ class TestYearGetter(unittest.TestCase):
             mock_urlopen.return_value = make_cm_for_urlopen(
                 '{"currentDateTime": "11-06-1999"}'
             )
-            self.assertRaises(ValueError, what_is_year_now)
+            with self.assertRaises(ValueError, msg='Invalid format'):
+                what_is_year_now()

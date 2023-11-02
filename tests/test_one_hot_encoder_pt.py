@@ -4,15 +4,15 @@ from one_hot_encoder import fit_transform
 
 TEST_INPUT = ['I', 'love', 'cats', 'and', 'dogs', 'but', 'cats', 'more']
 EXPECTED_OUTPUT = [
-            ('I', [0, 0, 0, 0, 0, 0, 1]),
-            ('love', [0, 0, 0, 0, 0, 1, 0]),
-            ('cats', [0, 0, 0, 0, 1, 0, 0]),
-            ('and', [0, 0, 0, 1, 0, 0, 0]),
-            ('dogs', [0, 0, 1, 0, 0, 0, 0]),
-            ('but', [0, 1, 0, 0, 0, 0, 0]),
-            ('cats', [0, 0, 0, 0, 1, 0, 0]),
-            ('more', [1, 0, 0, 0, 0, 0, 0]),
-        ]
+    ('I', [0, 0, 0, 0, 0, 0, 1]),
+    ('love', [0, 0, 0, 0, 0, 1, 0]),
+    ('cats', [0, 0, 0, 0, 1, 0, 0]),
+    ('and', [0, 0, 0, 1, 0, 0, 0]),
+    ('dogs', [0, 0, 1, 0, 0, 0, 0]),
+    ('but', [0, 1, 0, 0, 0, 0, 0]),
+    ('cats', [0, 0, 0, 0, 1, 0, 0]),
+    ('more', [1, 0, 0, 0, 0, 0, 0]),
+]
 
 
 def test_empty_input():
@@ -32,5 +32,8 @@ def test_multiple_words_as_args():
 
 
 def test_incorrect_input():
-    with pytest.raises(TypeError):
+    with pytest.raises(
+            TypeError,
+            match='expected at least 1 arguments, got 0'
+    ):
         fit_transform()
